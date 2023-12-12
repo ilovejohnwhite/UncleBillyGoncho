@@ -6,10 +6,7 @@ import logging
 from typing import Dict, Optional, Union
 
 from PIL import Image
-from TatToolkit.pbnify import PbnifyPreprocessor
-from TatToolkit.lightlines import LightLines
 from TatToolkit.SuckerPunch import SuckerPunchPro
-from TatToolkit.dipit import DipItPreprocessor
 from TatToolkit.lineart import LineartDetector
 from TatToolkit.lineart_realistic import LineartDetector
 from TatToolkit.VooDoo import VooDoo
@@ -27,9 +24,6 @@ MODELS = {
     'tile': {'class': TileDetector, 'checkpoint': False},
 }
 MODELS.update({
-    'pbnify': {'class': PbnifyPreprocessor, 'checkpoint': False},
-    'lightlines': {'class': LightLines, 'checkpoint': False},
-    'dipit': {'class': DipItPreprocessor, 'checkpoint': False}, 
     'SuckerPunch': {'class': SuckerPunchPro, 'checkpoint': False},
     'VooDoo': {'class': VooDoo, 'checkpoint': False},
 })
@@ -44,9 +38,6 @@ MODEL_PARAMS = {
 }
 
 MODEL_PARAMS.update({
-    'pbnify': {},  # Add default parameters if any
-    'dipit': {},
-    'lightlines': {},  # Update with actual default parameters if needed
     'SuckerPunch': {},
     'VooDoo': {},
 })
