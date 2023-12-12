@@ -13,7 +13,7 @@ class LineArt_Preprocessor:
 
     CATEGORY = "ControlNet Preprocessors/Line Extractors"
 
-    def execute(self, image, resolution=512, **kwargs):
+    def execute(self, image, resolution=2048, **kwargs):
         from TatToolkit.lineart import LineartDetector
 
         model = LineartDetector.from_pretrained(HF_MODEL_NAME, cache_dir=annotator_ckpts_path).to(model_management.get_torch_device())
