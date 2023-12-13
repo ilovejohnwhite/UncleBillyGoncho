@@ -5,7 +5,7 @@ from sklearn.cluster import KMeans
 from TatToolkit.util import resize_image_with_pad, common_input_validate, HWC3
 
 class SuckerPunchPro:
-    def __init__(self, n_clusters=7, smoothing_kernel_size=(7, 7)):
+    def __init__(self, n_clusters=7, smoothing_kernel_size=(10, 10)):
         self.n_clusters = n_clusters
         self.smoothing_kernel_size = smoothing_kernel_size
 
@@ -23,7 +23,8 @@ class SuckerPunchPro:
         return clustered_image
 
     def smooth_clusters(self, clustered_image):
-        kernel = np.ones(self.smoothing_kernel_size, np.uint8)
+        # Create an elliptical/oval kernel
+        kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, self.smoothing_kernel_size)
         smoothed_image = cv2.morphologyEx(clustered_image, cv2.MORPH_CLOSE, kernel)
         return smoothed_image
 
