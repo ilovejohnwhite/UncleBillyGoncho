@@ -11,7 +11,8 @@ from TatToolkit.lineart import LineartDetector
 from TatToolkit.lineart_realistic import LineartDetector
 from TatToolkit.VooDoo import VooDoo
 from TatToolkit.VooDoo2 import VooDoo2
-
+from TatToolkit.CrispyBoi import CrispyBoiPro
+from TatToolkit.LinkMaster import LinkMaster
 LOGGER = logging.getLogger(__name__)
 
 
@@ -28,6 +29,8 @@ MODELS.update({
     'SuckerPunch': {'class': SuckerPunchPro, 'checkpoint': False},
     'VooDoo': {'class': VooDoo, 'checkpoint': False},
     'VooDoo2': {'class': VooDoo2, 'checkpoint': False},
+    'CrispyBoi': {'class': CrispyBoiPro, 'checkpoint': False},
+    'LinkMaster': {'class': LinkMaster, 'checkpoint': False},
 })
 
 
@@ -43,6 +46,8 @@ MODEL_PARAMS.update({
     'SuckerPunch': {},
     'VooDoo': {},
     'VooDoo2': {},
+    'CrispyBoi': {},
+    'LinkMaster': {},
 })
 
 CHOICES = f"Choices for the processor are {list(MODELS.keys())}"
